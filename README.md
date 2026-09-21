@@ -1,4 +1,6 @@
-# Django com Docker
+# Alunos: Cauã Evaristo da Cruz e Ana Dantas
+
+# Django com Docker 
 
 Aplicação simples com upload de arquivos e três containers:
 
