@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Upload de arquivos</title>
+</head>
+<body>
+    <h1>Upload de arquivos</h1>
+    <p>Selecione um arquivo para enviar (até 19 MB).</p>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enviar</button>
+    </form>
+
+    <h2>Arquivos enviados</h2>
+    <ul>
+        {% for item in arquivos %}
+            <li><a href="{{ item.arquivo.url }}">{{ item.arquivo.name }}</a></li>
+        {% empty %}
+            <li>Nenhum arquivo enviado.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
